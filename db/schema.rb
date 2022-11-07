@@ -10,9 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_07_113257) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_07_125853) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "foods", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "measurement_unit", default: "g", null: false
+    t.float "price", default: 0.0, null: false
+    t.integer "quantity", default: 0, null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipe_foods", force: :cascade do |t|
+    t.integer "quantity", null: false
+    t.bigint "recipe_id"
+    t.bigint "food_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name", null: false
+    t.float "preparation_time", default: 0.0, null: false
+    t.float "cooking_time", default: 0.0, null: false
+    t.string "description", null: false
+    t.boolean "public", default: false, null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
