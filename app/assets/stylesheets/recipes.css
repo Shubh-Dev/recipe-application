@@ -1,0 +1,17 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  .showcase {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .recipe-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }

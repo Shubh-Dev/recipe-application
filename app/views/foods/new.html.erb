@@ -1,0 +1,24 @@
+<div class="food-form-container">
+<br>
+<%= form_with model: @food, local: true do |form| %>
+<div class="field">
+<%= form.label :name %>
+<%= form.text_field :name %>
+</div>
+<div class="field">
+<%= form.label :measurement_unit %>
+<%= form.text_field :measurement_unit %>
+</div>
+<div class="field">
+<%= form.label :price %>
+<%= form.text_field :price %>
+</div>
+<div class="field">
+<%= form.label :quantity %>
+<%= form.text_field :quantity %>
+</div>
+<div class="actions">
+<%= form.submit %>
+</div>
+<% end %>
+</div>
