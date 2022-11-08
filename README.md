@@ -56,3 +56,5 @@ $ rails s
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
+This project is [MIT](./LICENSE.md) licensed.
