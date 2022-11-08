@@ -23,11 +23,10 @@
 }
 
 .container {
-  margin: 20px, auto, auto, auto;
   min-height: 78vh;
 }
 
-body{
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
