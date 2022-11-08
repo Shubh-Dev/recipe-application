@@ -1,0 +1,29 @@
+<h3>Add new Recipe</h3>
+<div class="recipe-form">
+<%= form_with model: @recipe, local: true do |form| %>
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+<div class="field">
+  <%= form.label :preparation_time %>
+  <%= form.text_field :preparation_time %>
+</div>
+<div class="field">
+  <%= form.label :cooking_time %>
+  <%= form.text_field :cooking_time %>
+</div>
+<div class="field">
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+</div>
+<div class="field">
+  <%= form.label :public %>
+  <%= form.check_box :public, class: 'form-check-input', id: "public", checked: true %>
+</div>
+<div class="field">
+  <%= form.submit %>
+</div>
+<% end %>
+
+</div>

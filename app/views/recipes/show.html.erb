@@ -1,0 +1,51 @@
+<div class="recipe-details">
+<h3><%= @recipe.name %></h3>
+<div class="showcase">
+
+<div class="left-details">
+<p>Preparation Time: <%= @recipe.preparation_time %> hour</p>
+<p>Cooking Time: <%= @recipe.cooking_time %> hour</p>
+<p>Steps to go here..</p>
+<%= button_to "Generate Shoping List" %>
+</div>
+<div class="right-details">
+   <%= button_to "Add Ingredients"%>
+</div>
+
+</div>
+<br>
+<hr>
+
+<div class="ingredient-details">
+ <table class="recipe-food-table">
+    <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th >Value</th>
+            <% if @recipe.user == current_user %>
+       
+  
+      <th>Action</th><% end %>
+    </tr>
+    </thead>
+    <tbody>
+    <% if (@recipe.recipe_foods.length() < 1) %>
+      <tr>
+        <td>No food is attached 😔</td>
+      </tr>
+    <% end %>
+    <% @recipe.recipe_foods.each do |item| %>
+      <tr>
+        <th><%= item.food.name %></th>
+        <td><%= item.quantity %></td>
+        <td>$<%= item.quantity * item.food.price %></td>
+         <% if @recipe.user == current_user %>
+        <td><%= button_to raw('<i class=\"fa-solid fa-trash-can"\></i> Delete'), recipe_recipe_foods_path(@recipe.id, id: item.id), :method => :delete, :class => "btn btn-sm btn-danger" %></td>
+       <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

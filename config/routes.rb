@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  root to: 'recipes#index'
+  resources :recipes, only: [:index, :show, :new, :create, :destroy] do
+    resource :recipe_foods, only: %w[create destroy]
+  end
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :users, Only: [:index]
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root to: 'users#index'
+  resources :foods, only: [:index, :new, :create, :destroy]
 end
