@@ -4,10 +4,10 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 ## Built With
 
 - Technologies used:
-  > Ruby
-  > Rails
-  > css
-  > postgresql
+  - Ruby
+  - Rails
+  - css
+  - postgresql
 
 
 ## Getting Started
