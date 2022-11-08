@@ -17,3 +17,20 @@ td {
   justify-content: space-between;
   padding: 20px;
 }
+
+.public-recipe-container {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.public-recipe {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.public-recipe-headline {
+  text-align: center;
+}

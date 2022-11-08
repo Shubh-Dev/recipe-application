@@ -1,0 +1,18 @@
+
+
+<div class="public-recipe-container">
+    <h3 class="public-recipe-headline">All Public Recipes</h3>
+    <br>
+    <% @public_recipes.each do |recipe| %>
+        <div class="public-recipe">
+        <div class="left-column">
+            <h3><%= link_to recipe.name, recipe %></h3>
+            <p>by:<%= recipe.user.name %></p>
+        </div>
+        <div class="right-column">
+            <p>Total Food Items:</p>
+            <p>Total Cost: </p>
+        </div>
+        </div>
+    <% end %>
+</div>
