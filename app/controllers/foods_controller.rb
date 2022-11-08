@@ -8,12 +8,18 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = current_user.foods.new(food_params)
-    if @food.save
+    @new_food = current_user.foods.new(food_params)
+    if @new_food.save
       redirect_to foods_path
     else
       render :new
     end
+  end
+
+  def destroy
+    @food = Food.find(params[:id])
+    @food.destroy
+    redirect_to foods_path
   end
 
   private
