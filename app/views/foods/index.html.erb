@@ -1,9 +1,11 @@
-<div class="add-new-food-button">
-<%= link_to "Add New Food", new_food_path %>
-</div>
-
 <div class="food-index-container">
-    <table>
+<br>
+<div class="add-new-food-button">
+<%= button_to "Add New Food", new_food_path, method: :get %>
+</div>
+<br><br>
+
+    <table class="food-table">
         <thead>
             <tr>
                 <th>Food</th>
