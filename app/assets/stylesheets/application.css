@@ -22,6 +22,16 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.container {
+  min-height: 78vh;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -32,4 +42,9 @@
 .nav-list {
   display: flex;
   gap: 10px;
+}
+
+.footer {
+  padding: 20px;
+  background-color: rgb(115, 234, 75);
 }
