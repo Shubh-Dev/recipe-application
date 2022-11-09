@@ -49,10 +49,8 @@ td {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
 }
 
 .generate-shopping-list-btn {
   border: 2px solid green;
-
 }
