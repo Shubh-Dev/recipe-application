@@ -22,6 +22,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.headline {
+  font-size: 28px;
+}
+
 .container {
   min-height: 78vh;
 }
@@ -41,11 +45,23 @@ body {
 
 .nav-list {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .footer {
   padding: 20px;
   background-color: rgb(115, 234, 75);
   text-align: center;
+}
+
+.classic-btn {
+  background-color: rgb(115, 234, 75);
+  width: 10rem;
+  height: 40px;
+  border: 1px solid rgb(59, 50, 50);
+  border-radius: 5px;
+}
+
+.grey-color {
+  color: rgb(110, 101, 101);
 }

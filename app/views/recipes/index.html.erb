@@ -1,31 +1,22 @@
-<h2>Recipes</h2>
+<h2 class="recipes-index-headline grey-color">Recipes</h2>
 
- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Preparation Time</th>
-      <th>Cooking Time</th>
-      <th>Public</th>
-      <th>Action</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @recipes.each_with_index do |recipe, index| %>
-    <tr>
-    
-      <td><%= link_to recipe.name, recipe %>-<%= index+1 %> </td>
-      <td><%= recipe.description %></td>
-      <td><%= recipe.preparation_time %></td>
-      <td><%= recipe.cooking_time %></td>
-      <td><%= recipe.public %></td>
-      <td>
-        <% if current_user == recipe.user %>
-        <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %></td>
+
+  <% @recipes.each do |recipe| %>
+      <div class="recipe-index-container">
+      <div class="recipe-name-btn-index"> 
+      <h3><%= link_to recipe.name, recipe %></h3>
+      <br>
+      <% if can? :manage, recipe %>
+        <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "classic-btn" %></td>
         <% end %>
-      </tr>
+        </div> 
+
+      <div class="recipe-description-index">
+      <p><strong>Description:</strong> <%= recipe.description %></p>
+      <br>
+      <p><strong>Created by:</strong> <%= recipe.user.name %></p>
+
+      </div>
+      </div>
     <% end %>
-    </tbody>
- </table>
+
