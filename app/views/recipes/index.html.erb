@@ -21,8 +21,11 @@
       <td><%= recipe.preparation_time %></td>
       <td><%= recipe.cooking_time %></td>
       <td><%= recipe.public %></td>
-      <td><%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %></td>
-    </tr>
+      <td>
+        <% if current_user == recipe.user %>
+        <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <% end %>
+      </tr>
     <% end %>
     </tbody>
  </table>

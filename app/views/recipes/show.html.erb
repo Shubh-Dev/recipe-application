@@ -1,12 +1,14 @@
 <div class="recipe-details">
-<h3><%= @recipe.name %></h3>
+<br>
+<h3 class="recipe-name-show"><%= @recipe.name %></h3>
+<br>
 <div class="showcase">
 
 <div class="left-details">
-<p>Preparation Time: <%= @recipe.preparation_time %> hour</p>
-<p>Cooking Time: <%= @recipe.cooking_time %> hour</p>
-<p>Steps to go here..</p>
-<%= button_to "Generate Shoping List" %>
+<p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> hour</p>
+<p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> hour</p>
+<p><strong>Steps to go here..</strong></p>
+<%= button_to "Generate Shoping List", class: "generate-shopping-list-btn" %>
 </div>
 <div class="right-details">
    <%= button_to "Add Ingredients"%>
