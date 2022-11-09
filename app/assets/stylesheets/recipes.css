@@ -34,3 +34,23 @@ td {
 .public-recipe-headline {
   text-align: center;
 }
+
+.recipe-details {
+  border: 1px dashed red;
+  width: 70%;
+  margin: auto;
+}
+
+.recipe-name-show {
+  text-align: center;
+}
+
+.left-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.generate-shopping-list-btn {
+  border: 2px solid green;
+}
