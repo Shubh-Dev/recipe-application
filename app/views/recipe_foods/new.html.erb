@@ -1,8 +1,9 @@
+ <div class="recipe-food-form">
  <%= form_with model: @recipe_food, url: recipe_recipe_foods_path, method: :post, local: true  do |f|%>
   
   <div class="form-food-quantity">
         <%= f.label :quantity %>
-        <%= f.number_field :quantity, class: "form-control" %>
+        <%= f.number_field :quantity, min: 1, max: 1000, step: 1, value: 1, class: "number-field" %>
       </div>
       <div class="recipe-id-form">
         <%= f.hidden_field :recipe_id, value: @recipe.id %>
@@ -17,5 +18,6 @@
     <% end %>
      
 
-<%= f.submit "Add Ingredients", class: "btn btn-primary" %>
+<%= f.submit "Add Ingredients", class: "classic-btn" %>
 <% end %>
+</div>

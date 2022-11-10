@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :foods, only: [:index, :new, :create, :destroy]
   resources :public_recipes, only: [:index]
+
 end

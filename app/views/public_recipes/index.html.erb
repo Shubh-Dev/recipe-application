@@ -6,12 +6,12 @@
     <% @public_recipes.each do |recipe| %>
         <div class="public-recipe">
         <div class="left-column">
-            <h3><%= link_to recipe.name, recipe %></h3>
-            <p>by:<%= recipe.user.name %></p>
+            <h3><%= link_to recipe.name, recipe %></h3><br>
+            <p>By: <%= recipe.user.name %></p>
         </div>
         <div class="right-column">
-            <p>Total Food Items:</p>
-            <p>Total Cost: </p>
+            <p>Total Food Items: <%= recipe.getfoods(recipe).count %></p> <br>
+            <p>Total Cost: <%= recipe.total_price(recipe.getfoods(recipe)) %></p>
         </div>
         </div>
     <% end %>

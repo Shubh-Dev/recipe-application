@@ -1,22 +1,27 @@
-<div class="food-form-container">
 <br>
+<h2 class="text-center">Add new food</h2>
+<div class="food-form-container login-form">
 <%= form_with model: @food do |form| %>
 <div class="field">
-<%= form.label :name %>
+<%= form.label :name %> <br>
 <%= form.text_field :name %>
 </div>
+<br>
 <div class="field">
-<%= form.label :measurement_unit %>
+<%= form.label :measurement_unit %> <br>
 <%= form.text_field :measurement_unit %>
 </div>
+<br>
 <div class="field">
-<%= form.label :price %>
+<%= form.label :price %> <br>
 <%= form.text_field :price %>
 </div>
+<br>
 <div class="field">
-<%= form.label :quantity %>
+<%= form.label :quantity %> <br>
 <%= form.text_field :quantity %>
 </div>
+<br>
 <div class="actions">
 <%= form.submit %>
 </div>
