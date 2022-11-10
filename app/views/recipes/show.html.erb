@@ -11,7 +11,12 @@
 <%= button_to "Generate Shoping List", class: "generate-shopping-list-btn" %>
 </div>
 <div class="right-details">
-   <%= button_to "Add Ingredients"%>
+    <div class="form-switch">
+      <label class="form-check-label" for="public">Public</label>
+      <input class="form-check-input" type="checkbox" id="public" <%= 'checked' if @recipe.public %> disabled>
+    </div>
+    <br>
+   <%= link_to "Add Ingredients", new_recipe_recipe_foods_path(@recipe) %>
 </div>
 
 </div>
