@@ -14,20 +14,18 @@ td {
   border: 1px solid rgb(213, 210, 210);
   padding: 20px;
   box-shadow: 0 0 20px 0 rgb(213, 210, 210);
+}
 
-  
-  }
+.recipes-index-headline {
+  text-align: center;
+  margin: 2rem auto;
+}
 
-  .recipes-index-headline {
-    text-align: center;
-    margin: 2rem auto;
-  }
-
-  .showcase {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-  }
+.showcase {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
 
 .recipe-form {
   display: flex;
@@ -78,6 +76,4 @@ td {
 .right-column {
   border: 1px dashed red;
   max-width: 500px;
-
 }
-
