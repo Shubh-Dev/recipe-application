@@ -30,5 +30,4 @@ class Recipe < ApplicationRecord
     end
     total
   end
-
 end

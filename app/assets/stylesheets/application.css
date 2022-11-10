@@ -61,7 +61,6 @@ body {
   color: #fff;
 }
 
-
 .current-user-name {
   font-size: 15px;
   color: rgb(57, 54, 54);
@@ -91,7 +90,6 @@ body {
   border-radius: 5px;
   font-size: 18px;
 }
-
 
 input[type="checkbox"] {
   width: 15px;

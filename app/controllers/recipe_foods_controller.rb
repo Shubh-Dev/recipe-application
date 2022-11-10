@@ -1,7 +1,7 @@
 class RecipeFoodsController < ApplicationController
   before_action :authenticate_user!
 
-  def new 
+  def new
     @recipe_food = RecipeFood.new(recipe_id: params[:recipe_id])
     @recipe = Recipe.find(params[:recipe_id])
     @foods = Food.all
@@ -15,8 +15,8 @@ class RecipeFoodsController < ApplicationController
                   flash: { success: "#{@recipe_food.food.name} has been attached successfully!" }
     else
       redirect_to recipe_path(params[:recipe_id]),
-       flash: { error: "Something went wrong!" }
-              
+                  flash: { error: 'Something went wrong!' }
+
     end
   end
 
