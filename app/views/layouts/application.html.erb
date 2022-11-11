@@ -14,24 +14,28 @@
 
   <body>
   <header class="header">
-    <h1 class="headline">Recipe Application</h1>
-    <p> <% if user_signed_in? %> Logged in as: <%= current_user.name %> <% end %> </p>
+  <div class="header-lest">
+    <h1 class="headline">Tasty Recipes</h1>
+    <p class="current-user-name"> <% if user_signed_in? %> Hello, <%= current_user.name %> <% end %> </p>
+    </div>
     <nav class="navigation">
       <ul class="nav-list">
-        <li><% if user_signed_in? %><%= link_to "Home", root_path %></li>
+        <li><% if user_signed_in? %><%= link_to "Home", root_path, class: "color-dark" %></li>
          <% end %>
-         <li> <% if user_signed_in? %><%= link_to "Foods", foods_path %></li>
+         <li><% if user_signed_in? %> <%= link_to "Recipes", recipes_path, class: "color-dark" %> </li>
           <% end %>
-          <li><% if user_signed_in? %> <%= link_to "Add Recipe", new_recipe_path %></li>
+         <li> <% if user_signed_in? %><%= link_to "Foods", foods_path, class: "color-dark" %></li>
           <% end %>
-          <li><% if user_signed_in? %><%= link_to "Public recipes", public_recipes_path %></li>
+          <li><% if user_signed_in? %> <%= link_to "AddRecipe", new_recipe_path, class: "color-dark"  %></li>
+          <% end %>
+          <li><% if user_signed_in? %><%= link_to "Public", public_recipes_path, class: "color-dark" %></li>
           <% end %>
         <li><% if user_signed_in? %>
-          <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "sign-out-btn" %>
         <% elsif current_page?(new_user_session_path) %>
-          <%= link_to "Sign up", new_user_registration_path %>
+          <%= link_to "Sign up", new_user_registration_path, class: "sign-out-btn" %>
         <% else %>
-          <%= link_to "Sign in", new_user_session_path %>
+          <%= link_to "Sign in", new_user_session_path, class: "sign-out-btn" %>
         <% end %></li>
 
       </ul>

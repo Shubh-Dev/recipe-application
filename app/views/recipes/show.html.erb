@@ -7,16 +7,23 @@
 <div class="left-details">
 <p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> hour</p>
 <p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> hour</p>
-<p><strong>Steps to go here..</strong></p>
-<%= button_to "Generate Shoping List", class: "generate-shopping-list-btn" %>
+<p><%= simple_format truncate((h(@recipe.description) + link_to("Read more", recipe_path(@recipe))), length: 100) %></p>
 </div>
 <div class="right-details">
-   <%= button_to "Add Ingredients"%>
+    <div class="form-switch">
+      <label class="form-check-label" for="public">Public</label>
+      <input class="form-check-input" type="checkbox" id="public" <%= 'checked' if @recipe.public %> disabled>
+    </div>
+    <br>
+    <div class="add-ingredients-btn" >
+   <%= link_to "Add Ingredients", new_recipe_recipe_foods_path(@recipe) %>
+   </div>
 </div>
 
 </div>
 <br>
 <hr>
+<br>
 
 <div class="ingredient-details">
  <table class="recipe-food-table">
@@ -25,7 +32,7 @@
       <th>Food</th>
       <th>Quantity</th>
       <th >Value</th>
-      <% if @recipe.user == current_user %>
+      <% if can? :manage, @recipe %>
        
   
       <th>Action</th><% end %>
@@ -40,10 +47,10 @@
     <% @recipe.recipe_foods.each do |item| %>
       <tr>
         <th><%= item.food.name %></th>
-        <td><%= item.quantity %></td>
-        <td>$<%= item.quantity * item.food.price %></td>
+        <td class="text-center"><%= item.quantity %></td>
+        <td class="text-center">$<%= item.quantity * item.food.price %></td>
          <% if @recipe.user == current_user %>
-        <td><%= button_to raw('<i class=\"fa-solid fa-trash-can"\></i> Delete'), recipe_recipe_foods_path(@recipe.id, id: item.id), :method => :delete, :class => "btn btn-sm btn-danger" %></td>
+        <td class="text-center"><%= button_to "Delete", recipe_recipe_foods_path(@recipe.id, id: item.id), :method => :delete, :class => "delete-btn" %></td>
        <% end %>
       </tr>
     <% end %>

@@ -1,9 +1,5 @@
 <div class="food-index-container">
-
-<div class="add-new-food-button">
-<%= button_to "Add New Food", new_food_path, method: :get %>
-</div>
-<br>
+ <br>
     <table class="food-table">
         <thead>
             <tr>
@@ -12,20 +8,24 @@
                 <th>Unit Price</th>
                 <th>Quantity</th>
                 <th>Action</th>
-                <th colspan="3"></th>
+                <%# <th colspan="3"></th> %>
             </tr>
         </thead>
         <tbody>
             <% @foods.each do |food| %>
                 <tr>
-                    <td><%= food.name %></td>
-                    <td><%= food.measurement_unit %></td>
-                    <td><%= food.price %></td>
-                    <td><%= food.quantity %></td>
-                    <td><%= button_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td class="text-center"><%= food.name %></td>
+                    <td class="text-center"><%= food.measurement_unit %></td>
+                    <td class="text-center"><%= food.price %></td>
+                    <td class="text-center"><%= food.quantity %></td>
+                    <td class="text-center"><%= button_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-btn" %></td>
                 </tr>
             <% end %>
         </tbody>
         </thead>
     </table>
+    <br>
+     <div class="add-new-food-button text-center">
+ <%= button_to "Add New Food", new_food_path, method: :get, class: "classic-btn" %>
+ </div>
 </div>

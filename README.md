@@ -1,5 +1,13 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+
 ## Recipe App
 The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, what needs to buy, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
+
+## Screenshots
+
+![screenshot](./app/assets/images/recipe-app-screen.png)
+ 
 
 ## Built With
 
@@ -53,8 +61,18 @@ $ rails s
 - GitHub: [@Shubh-dev](https://github.com/Shubh-Dev)
 - LinkedIn: [Shubh Dev](https://www.linkedin.com/in/shubhscb/)
 
+## Acknowledgement
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## style check
+- npx stylelint "**/*.{css,scss}"
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
 This project is [MIT](./LICENSE.md) licensed.
+
+
