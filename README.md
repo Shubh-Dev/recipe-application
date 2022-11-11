@@ -1,7 +1,9 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 ## Acknowledgement
-This project is [MIT](./LICENSE.md) licensed.
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
 
 
 ## Recipe App
@@ -70,5 +72,7 @@ $ rails s
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
+This project is [MIT](./LICENSE.md) licensed.
 
 
