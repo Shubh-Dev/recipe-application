@@ -6,6 +6,14 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
+  def after_sign_in_path_for(_resource_or_scope)
+    root_path
+  end
+
+  def after_sign_up_path_for(_resource_or_scope)
+    foods_path
+  end
+
   def route_not_found
     render file: 'public/404.html', status: :not_found, layout: false
   end

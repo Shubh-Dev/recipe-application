@@ -53,6 +53,9 @@ $ rails s
 - GitHub: [@Shubh-dev](https://github.com/Shubh-Dev)
 - LinkedIn: [Shubh Dev](https://www.linkedin.com/in/shubhscb/)
 
+## style check
+- npx stylelint "**/*.{css,scss}"
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
