@@ -9,6 +9,8 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 ![screenshot](./app/assets/images/recipe-app-screen.png)
 
+</hr>  
+
 ## Built With
 
 - Technologies used:
