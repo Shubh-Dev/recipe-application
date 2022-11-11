@@ -1,0 +1,60 @@
+<div class="recipe-details">
+<br>
+<h3 class="recipe-name-show"><%= @recipe.name %></h3>
+<br>
+<div class="showcase">
+
+<div class="left-details">
+<p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> hour</p>
+<p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> hour</p>
+<p><%= simple_format truncate((h(@recipe.description) + link_to("Read more", recipe_path(@recipe))), length: 100) %></p>
+</div>
+<div class="right-details">
+    <div class="form-switch">
+      <label class="form-check-label" for="public">Public</label>
+      <input class="form-check-input" type="checkbox" id="public" <%= 'checked' if @recipe.public %> disabled>
+    </div>
+    <br>
+    <div class="add-ingredients-btn" >
+   <%= link_to "Add Ingredients", new_recipe_recipe_foods_path(@recipe) %>
+   </div>
+</div>
+
+</div>
+<br>
+<hr>
+<br>
+
+<div class="ingredient-details">
+ <table class="recipe-food-table">
+    <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th >Value</th>
+      <% if can? :manage, @recipe %>
+       
+  
+      <th>Action</th><% end %>
+    </tr>
+    </thead>
+    <tbody>
+    <% if (@recipe.recipe_foods.length() < 1) %>
+      <tr>
+        <td>No food is attached 😔</td>
+      </tr>
+    <% end %>
+    <% @recipe.recipe_foods.each do |item| %>
+      <tr>
+        <th><%= item.food.name %></th>
+        <td class="text-center"><%= item.quantity %></td>
+        <td class="text-center">$<%= item.quantity * item.food.price %></td>
+         <% if @recipe.user == current_user %>
+        <td class="text-center"><%= button_to "Delete", recipe_recipe_foods_path(@recipe.id, id: item.id), :method => :delete, :class => "delete-btn" %></td>
+       <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

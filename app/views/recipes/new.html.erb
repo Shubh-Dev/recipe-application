@@ -1,0 +1,36 @@
+<div class="recipe-food-form">
+<h3 class="add-new-recipe-header">Add new Recipe</h3>
+<div class="recipe-form">
+<%= form_with model: @recipe, local: true do |form| %>
+<div class="field">
+  <%= form.label :name %> <br>
+  <%= form.text_field :name %>
+</div>
+<br>
+<div class="field">
+  <%= form.label :preparation_time %> <br>
+  <%= form.text_field :preparation_time %>
+</div>
+<br>
+<div class="field">
+  <%= form.label :cooking_time %> <br>
+  <%= form.text_field :cooking_time %>
+</div>
+<br>
+<div class="field">
+  <%= form.label :description %> <br>
+  <%= form.text_area :description %>
+</div>
+<br>
+<div class="field">
+  <%= form.label :public %>
+  <%= form.check_box :public %>
+</div>
+<br>
+<div class="field">
+  <%= form.submit %>
+</div>
+<% end %>
+
+</div>
+</div>

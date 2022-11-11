@@ -1,0 +1,10 @@
+.food-index-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.food-table {
+  width: 70%;
+  margin: 0 auto;
+}

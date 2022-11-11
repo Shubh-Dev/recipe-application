@@ -1,0 +1,22 @@
+<h2 class="recipes-index-headline grey-color">Recipes</h2>
+
+
+  <% @recipes.each do |recipe| %>
+      <div class="recipe-index-container">
+      <div class="recipe-name-btn-index"> 
+      <h3><%= link_to recipe.name, recipe %></h3>
+      <br>
+      <% if can? :manage, recipe %>
+        <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "classic-btn" %></td>
+        <% end %>
+        </div> 
+
+      <div class="recipe-description-index">
+      <p><strong>Description:</strong> <%= recipe.description %></p>
+      <br>
+      <p><strong>Created by:</strong> <%= recipe.user.name %></p>
+
+      </div>
+      </div>
+    <% end %>
+
